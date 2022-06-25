@@ -13,6 +13,7 @@ let scanning = false;
 qrcode.callback = res => {
   if (res) {
     outputData.innerText = res;
+    console.log(res);
     scanning = false;
 
     video.srcObject.getTracks().forEach(track => {
@@ -26,6 +27,7 @@ qrcode.callback = res => {
 };
 
 btnScanQR.onclick = () => {
+  console.log("funktionier");
   navigator.mediaDevices
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
