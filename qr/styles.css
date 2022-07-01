@@ -62,9 +62,8 @@ p {
 
 #einstellung {
   position: absolute;
-  top: 30px;
-  right: 50px;
-  font-size: 40px;
+  top: 25px;
+  right: 25px;
 }
 
 #abstand {
@@ -76,4 +75,8 @@ p {
   width: 100%;
   /*max-width: 70vw;
   max-height: calc(70vh - 300px);*/
+}
+
+#icon {
+  width: 50px;
 }
