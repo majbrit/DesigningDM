@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QR Code Scanner</title>
+    <title>Museumshilfe für Farbenblinde</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" href="./styles.css" />
@@ -9,18 +9,30 @@
   </head>
 
   <body>
-    <div id="container">
-      <h1>QR Code Scanner Test</h1>
+    <div class="nav">
+      <a id="einstellung" href="platzhalter.html"><img src="../bilder/einstellungen.png" class="icon"></a>
+    </div>
 
-      <a id="btn-scan-qr">
-        <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
-      <a/>
+    <div id="abstand">
+      <div id="container">
+        <h1 id="qrheader">QR Code Scanner</h1>
 
-      <canvas hidden="" id="qr-canvas"></canvas>
+        <a id="btn-scan-qr">
+          <img id="qricon" src="../bilder/qricon.png">
+        <a/>
 
-      <div id="qr-result" hidden="">
-        <b>Data:</b> <span id="outputData"></span>
+        <canvas hidden="" id="qr-canvas"></canvas>
+
+        <div id="qr-result" hidden="">
+          <b>Data:</b> <span id="outputData"></span>
+        </div>
       </div>
+
+
+      <h1 id="ueberschrift"></h1>    
+      <img src="" id="bild">
+      <p id="beschreibung"></p>
+      
     </div>
 
     <script src="./qrCodeScanner.js"></script>
