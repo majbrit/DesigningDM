@@ -10,8 +10,8 @@ const btnScanQR = document.getElementById("btn-scan-qr");
 
 
 
-var farbModus = "rot";
-var sprache = "de";
+var farbModus = "voll";
+var sprache = "es";
 var quelle = "";
 var typo = 15;
 
