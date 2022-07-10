@@ -26,8 +26,14 @@ const abstand = document.getElementById("abstand");
 
 let scanning = false;
 
+//Function für die Farbmodus Auswahl
+function colormode(mode) {
+    farbModus = mode;
+    //alert("Farbmodus: " + mode);
+}
 
-//Schriftgröße 
+
+//Schriftgröße
 abstand.style.fontSize = typo + "px";
 
 qrcode.callback = res => {
@@ -53,7 +59,7 @@ qrcode.callback = res => {
 
       case "Virus":
         console.log("Ausstellungsstück: Virus");
-        quelle = "../bilder/virus";  
+        quelle = "../bilder/virus";
         //Text mit gewählter Sprache
         switch (sprache) {
           case "de":
@@ -61,7 +67,7 @@ qrcode.callback = res => {
             ueberschrift.innerHTML = "Virus";
             beschreibung.innerHTML = "Globale Karte, die den Konsens über das Vorhandensein und Fehlen des Dengue-Virus zeigt.";
             break;
-          
+
           case "en":
             ueberschrift.innerHTML = "Virus";
             beschreibung.innerHTML = "Global map showing the evidence consensus on dengue virus presence and absence.";
@@ -86,14 +92,14 @@ qrcode.callback = res => {
 
       case "Schrift":
         console.log("Ausstellungsstück: Virus");
-        quelle = "../bilder/schrift";  
+        quelle = "../bilder/schrift";
         switch (sprache) {
           case "de":
             console.log("Deutsch");
             ueberschrift.innerHTML = "Schrift";
             beschreibung.innerHTML = "Die Schrift soll für alle farbenfroh wirken, so weit möglich.";
             break;
-          
+
           case "en":
             ueberschrift.innerHTML = "Font";
             beschreibung.innerHTML = "The font should look colorful for everyone, as much as possible.";
@@ -124,7 +130,7 @@ qrcode.callback = res => {
             ueberschrift.innerHTML = "Fehler";
             beschreibung.innerHTML = "QR-Code gehört nicht zu einem Ausstellungsstück";
             break;
-          
+
           case "en":
             ueberschrift.innerHTML = "Error";
             beschreibung.innerHTML = "QR code does not belong to an exhibit";
@@ -145,7 +151,7 @@ qrcode.callback = res => {
             beschreibung.innerHTML = "QR code does not belong to an exhibit";
             break;
         }
-        
+
         break;
     }
     //gewählten Farbemodus einsetzen
@@ -169,7 +175,7 @@ qrcode.callback = res => {
     bild.src = quelle;
 
 
-  
+
   }
 };
 
