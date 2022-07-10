@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <link rel="icon" type="image/png" href="">
+
+    <meta charset="utf-8">
+    <title>Museumshilfe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+</head>
+<body>
+    <div id="museum">
+    </div>
+
+    <!-- Sprachauswahl -->
+    <div class="sprachauswahl" hidden="true">
+        <header class="header">
+            <nav class="navbar navbar-style">
+                <div class="container">
+                    <div class="navbar " >
+                        <h3><span class="text">Adjust font size</span></h3>
+                    
+                    <span><input type="range" min="0" max="60" value="20" id="slider" /> </span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper" >
+            <div class="selector">
+                <span id="selectText">Select Language</span>
+                <i class="uil uil-angle-down"></i>
+            </div>
+            <div class="content">
+                <ul class="options">
+                    <li class="option">
+                        <span class="option-text">English</span>
+                    </li>
+                    <li class="option">
+                        <span class="option-text">German</span>
+                    </li>
+                    <li class="option">
+                        <span class="option-text">French</span>
+                    </li>
+                    <li class="option">
+                        <span class="option-text">Spanish</span>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <a><button class="block" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
+        </div>
+
+
+        <!-- Modiauswahl -->
+        <div class="modiauswahl" hidden="true">
+            <div class="nav">
+                <a id="zurueck"><img src="./bilder/zurueck.png" class="icon"></a>
+                <h1 class="headline"> Wählen Sie einen Farbmodus: </h1>
+            </div>
+            <div class="modi">
+                <button class="button" id="normal" onClick="colormode('normal')"> Originalbild </button>
+                <button class="button" id="gruen" onClick="colormode('gruen')"> Grünblindheit </button>
+                <button class="button" id="rot" onClick="colormode('rot')"> Rotblindheit </button>
+                <button class="button" id="blau" onClick="colormode('blau')"> Blaublindheit </button>
+                <button class="button" id="voll" onClick="colormode('voll')"> völlige Farbenblindheit </button>
+            </div>
+        
+            <a><button id="zuqr" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
+        </div>
+
+
+        <!-- QR-Code-Scanner -->
+        <div class="scanner" hidden="true">
+        <div class="nav">
+            <a id="einstellung"><img src="./bilder/einstellungen.png" class="icon"></a>
+            </div>
+        
+            <div id="abstand">
+                <div id="container">
+                <h1 id="qrheader">QR Code Scanner</h1>
+        
+                <a id="btn-scan-qr">
+                    <img id="qricon" src="./bilder/qricon.png">
+                <a/>
+        
+                <canvas hidden="" id="qr-canvas"></canvas>
+        
+                <div id="qr-result" hidden="">
+                    <b>Data:</b> <span id="outputData"></span>
+                </div>
+                </div>
+        
+        
+                <h1 id="ueberschrift"></h1>    
+                <img src="" id="bild">
+                <p id="beschreibung"></p>
+                
+            </div>
+        </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
