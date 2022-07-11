@@ -14,19 +14,20 @@
     <div id="museum">
     </div>
 
-    <!-- Sprachauswahl -->
+    <!-- Sprachauswahl-Seite -->
     <div class="sprachauswahl" hidden="true">
         <header class="header">
             <nav class="navbar navbar-style">
                 <div class="container">
                     <div class="navbar " >
-                        <h3><span class="text">Adjust font size</span></h3>
-                    
+                        <h3><span class="text">Adjust font size</span></h3>     
+                        <!--Slider für Schriftgröße-->           
                     <span><input type="range" min="0" max="60" value="20" id="slider" /> </span>
                     </div>
                 </div>
             </nav>
         </header>
+        <!--Dropdown für Sprachauswahl-->
         <div class="wrapper" >
             <div class="selector">
                 <span id="selectText">Select Language</span>
@@ -49,16 +50,24 @@
                 </ul>
             </div>
             </div>
+            <!--Button, um zur Modusauswahl zu kommen
+            Wenn man über Einstellungen zur Sprachauswahl gekommen ist, führt der Button zum QR-Code-Scanner -->
             <a><button class="block" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
         </div>
 
 
-        <!-- Modiauswahl -->
+        <!-- Modiauswahl-Seite -->
         <div class="modiauswahl" hidden="true">
+
             <div class="nav" >
+
+            <!--Button, um zur Sprachauswahl zurückzukehren-->
+            <div class="nav">
+
                 <a id="zurueck"><img src="./bilder/zurueck.png" class="icon"></a>
                 <span class="headline" id="moditext" > Wählen Sie einen Farbmodus: </span>
             </div>
+            <!--Buttons, um Farbmodus zu wählen-->
             <div class="modi">
                 <button class="button" id="normal" onClick="colormode('normal')"> Originalbild </button>
                 <button class="button" id="gruen" onClick="colormode('gruen')"> Grünblindheit </button>
@@ -66,14 +75,15 @@
                 <button class="button" id="blau" onClick="colormode('blau')"> Blaublindheit </button>
                 <button class="button" id="voll" onClick="colormode('voll')"> völlige Farbenblindheit </button>
             </div>
-        
+            <!--Button, um zum QR-Code-Scanner zu gelangen-->
             <a><button id="zuqr" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
         </div>
 
 
-        <!-- QR-Code-Scanner -->
+        <!-- QR-Code-Scanner-Seite -->
         <div class="scanner" hidden="true">
             <div class="nav">
+                <!--Dropdown für die Einstellungen-->
                 <div class="dropdown">
                     <img src="./bilder/einstellungen.png" onclick="chooseSetting()" class="dropbtn icon">
                     <div id="myDropdown" class="dropdown-content">
@@ -82,29 +92,25 @@
                     </div>
                 </div>
             </div>
-        
             <div id="abstand">
                 <div id="container">
                 <h1 id="qrheader">QR Code Scanner</h1>
-        
+                <!--Button, Scannen zu aktivieren-> Kamera wird angezeigt-->
                 <a id="btn-scan-qr">
                     <img id="qricon" src="./bilder/qricon.png">
                 <a/>
-        
+                <!--Für das Kamerabild-->
                 <canvas hidden="" id="qr-canvas"></canvas>
-        
+                <!--Über QR-Code eingelesene Daten ausgeben-->
                 <div id="qr-result" hidden="">
                     <b>Data:</b> <span id="outputData"></span>
                 </div>
-                </div>
-        
-        
+                </div>            
+                <!--Anzeige des Ausstellungsstücks mit Beschreibung-->
                 <h1 id="ueberschrift"></h1>    
                 <img src="" id="bild">
-                <p id="beschreibung"></p>
-                
-            </div>
-            
+                <p id="beschreibung"></p>              
+            </div>          
         </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
