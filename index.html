@@ -57,7 +57,7 @@
         <div class="modiauswahl" hidden="true">
             <div class="nav">
                 <a id="zurueck"><img src="./bilder/zurueck.png" class="icon"></a>
-                <h1 class="headline"> Wählen Sie einen Farbmodus: </h1>
+                <h1 class="headline" id="moditext"> Wählen Sie einen Farbmodus: </h1>
             </div>
             <div class="modi">
                 <button class="button" id="normal" onClick="colormode('normal')"> Originalbild </button>
@@ -73,8 +73,14 @@
 
         <!-- QR-Code-Scanner -->
         <div class="scanner" hidden="true">
-        <div class="nav">
-            <a id="einstellung"><img src="./bilder/einstellungen.png" class="icon"></a>
+            <div class="nav">
+                <div class="dropdown">
+                    <img src="./bilder/einstellungen.png" onclick="chooseSetting()" class="dropbtn icon">
+                    <div id="myDropdown" class="dropdown-content">
+                      <a onClick="setPage('language')" id="lang">Sprachauswahl</a>
+                      <a onClick="setPage('modi')" id="mod">Modusauswahl</a>
+                    </div>
+                </div>
             </div>
         
             <div id="abstand">
@@ -98,6 +104,7 @@
                 <p id="beschreibung"></p>
                 
             </div>
+            
         </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

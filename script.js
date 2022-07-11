@@ -25,6 +25,99 @@ const qrheader = document.getElementById("qrheader");
 const abstand = document.getElementById("abstand");
 let scanning = false;
 
+
+
+
+
+
+var wrapper = document.querySelector(".wrapper");
+var range = document.querySelector('input');
+var text= document.querySelector(".text");
+var selector = wrapper.querySelector(".selector");
+var block=document.querySelector(".block");
+
+var options = wrapper.querySelectorAll(".option");
+
+
+var scanner = document.querySelector(".scanner");
+var sprachauswahl = document.querySelector(".sprachauswahl");
+var modiauswahl = document.querySelector(".modiauswahl");
+
+
+range.addEventListener('input', function(){
+    console.log("range");
+    typo = range.value;
+    selector.style.fontSize = typo + "px";
+    document.body.style.fontSize = typo+"px";
+    buttons.forEach(el => el.style.fontSize = typo+"px");
+    spans.forEach(el => el.style.fontSize = typo+"px");
+ });
+
+options.forEach(option =>{
+    console.log("option");
+    option.addEventListener("click", () =>{
+        console.log("Event Listener");
+        let selectedOption = option.querySelector(".option-text").innerText;
+        selector.innerText = selectedOption;
+        console.log(selectedOption);
+        console.log(option)
+        switch (selectedOption) {
+            case "German":
+                sprache = "de";
+                break;
+
+            case "Spanish":
+                sprache = "es";
+                break;
+
+            case "French":
+                sprache = "fr";
+                break;
+
+            default:
+                sprache = "en";
+                break;
+        }
+        wrapper.classList.remove("active");
+
+        switch (sprache) {
+            case "de":
+                console.log("Deutsch");
+                text.innerHTML = "Schriftgröße einstellen";
+                break;
+
+            case "es":
+                text.innerHTML = "Establecer el tamaño de la fuente";
+                break;
+
+            case "fr":
+                text.innerHTML = "Régler la taille de la police";
+                break;
+
+            default:
+                text.innerHTML = "Adjust font size";
+                break;
+        }
+    })
+        
+    })
+
+selector.addEventListener("click", () => {
+    console.log("set active")
+    wrapper.classList.toggle("active");
+});
+function updateName(selectedLi){
+    console.log("update name");
+    wrapper.classList.remove("active");
+    selector.firstElementChild.innerText = selectedLi.innerText;
+
+}                
+
+
+
+
+
+
 class Stage {
     constructor() {
 
@@ -46,82 +139,10 @@ class Firststage extends Stage {
     }
     getContent() {
         var stage1 = document.createElement('div');
-        var sprachauswahl = document.querySelector(".sprachauswahl");
+        
         sprachauswahl.hidden = false;
 
-        var wrapper = document.querySelector(".wrapper");
-        var range = document.querySelector('input');
-        var text= document.querySelector(".text");
-        var selector = wrapper.querySelector(".selector");
-        var block=document.querySelector(".block");
-
-        var options = wrapper.querySelectorAll(".option");
-        
-        
-
-        range.addEventListener('input', function(){
-            typo = range.value;
-            selector.style.fontSize = typo + "px";
-            document.body.style.fontSize = typo+"px";
-            buttons.forEach(el => el.style.fontSize = typo+"px");
-            spans.forEach(el => el.style.fontSize = typo+"px");
-         });
-
-        options.forEach(option =>{
-            option.addEventListener("click", () =>{
-                let selectedOption = option.querySelector(".option-text").innerText;
-                selector.innerText = selectedOption;
-                console.log(selectedOption);
-                console.log(option)
-                switch (selectedOption) {
-                    case "German":
-                        sprache = "de";
-                        break;
-
-                    case "Spranish":
-                        sprache = "es";
-                        break;
-        
-                    case "French":
-                        sprache = "fr";
-                        break;
-        
-                    default:
-                        sprache = "en";
-                        break;
-                }
-                wrapper.classList.remove("active");
-
-                switch (sprache) {
-                    case "de":
-                        console.log("Deutsch");
-                        text.innerHTML = "Schriftgröße einstellen";
-                        break;
-
-                    case "es":
-                        text.innerHTML = "Establecer el tamaño de la fuente";
-                        break;
-        
-                    case "fr":
-                        text.innerHTML = "Régler la taille de la police";
-                        break;
-        
-                    default:
-                        text.innerHTML = "Adjust font size";
-                        break;
-                }
-            })
-                
-            })
-
-        selector.addEventListener("click", () => {
-            wrapper.classList.toggle("active");
-        });
-        function updateName(selectedLi){
-            wrapper.classList.remove("active");
-            selector.firstElementChild.innerText = selectedLi.innerText;
-
-        }                
+       
 
         block.onclick = function() {
             sprachauswahl.hidden = true;
@@ -145,15 +166,12 @@ class Secondstage extends Stage {
     }
     getContent() {
         var stage2 = document.createElement('div');
-        var modiauswahl = document.querySelector(".modiauswahl");
+        
         modiauswahl.hidden = false;
         var buttonzuqr = document.getElementById("zuqr");
         var zurueckbutton = document.getElementById("zurueck");
 
-        var text = document.createElement('div');
-        text.innerHTML ="Test";
-        stage2.appendChild(text);
-        text.id = "text";
+        var moditext = document.getElementById("moditext");
 
         var voll = document.getElementById("voll");
         var rot = document.getElementById("rot");
@@ -163,6 +181,7 @@ class Secondstage extends Stage {
 
         switch (sprache) {
             case "de":
+                moditext.innerHTML = "Wählen Sie einen Farbmodus:";
                 rot.innerHTML = "Rotblind";
                 gruen.innerHTML = "Grünblind";
                 blau.innerHTML = "Blaublind";
@@ -171,6 +190,7 @@ class Secondstage extends Stage {
                 break;
 
             case "es":
+                moditext.innerHTML = "Selecciona un modo de color:";
                 rot.innerHTML = "Ceguera roja";
                 gruen.innerHTML = "Ceguera verde";
                 blau.innerHTML = "Ceguera azul";
@@ -179,6 +199,7 @@ class Secondstage extends Stage {
                 break;
 
             case "fr":
+                moditext.innerHTML = "Choisissez un mode de couleur:";
                 rot.innerHTML = "Aveugle rouge";
                 gruen.innerHTML = "Cécité verte";
                 blau.innerHTML = "Aveugle bleu";
@@ -187,6 +208,7 @@ class Secondstage extends Stage {
                 break;
 
             default:
+                moditext.innerHTML = "Select a color mode:";
                 rot.innerHTML = "Red blind";
                 gruen.innerHTML = "Green blind";
                 blau.innerHTML = "Blue blind";
@@ -196,14 +218,13 @@ class Secondstage extends Stage {
         }
 
 
-        zuqr.onclick = function() {
+        buttonzuqr.onclick = function() {
             modiauswahl.hidden = true;
             stage3.drawStage()
         }
-        zurueck.onclick = function() {
+        zurueckbutton.onclick = function() {
             modiauswahl.hidden = true;
-            stage1
-            .drawStage()
+            stage1.drawStage()
         }
 
         return stage2;
@@ -216,8 +237,32 @@ class Thirdstage extends Stage {
     getContent() {
         var stage3 = document.createElement('div');
         setting = true;
-        var scanner = document.querySelector(".scanner");
         scanner.hidden = false;
+
+        var lang = document.getElementById("lang");
+        var mod = document.getElementById("mod");
+
+        switch (sprache) {
+            case "de":
+                lang.innerHTML="Sprach- und Größenauswahl";
+                mod.innerHTML="Modusauswahl";
+                break;
+
+            case "es":
+                lang.innerHTML="Selección de idioma y tamaño";
+                mod.innerHTML="Selección de modo";
+                break;
+
+            case "fr":
+                lang.innerHTML="Choix de la langue et de la taille";
+                mod.innerHTML="Sélection du mode";
+                break;
+
+            default:
+                lang.innerHTML="Language and size selection";
+                mod.innerHTML="Mode selection";
+                break;
+        }
 
         //Schriftgröße
         abstand.style.fontSize = typo + "px";
@@ -249,13 +294,62 @@ class Thirdstage extends Stage {
         };
 
 
+        
+
+
         return stage3;
     }
 }
 
+
+
 function colormode(mode) {
+    console.log("color mode");
     farbModus = mode;
 }
+
+
+
+
+            /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function chooseSetting() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+function setPage(p) {
+    console.log("funktioniert");
+        qricon.style.width = "";
+        container.style.textAlign = "center";
+        bild.src = "";
+        qrheader.innerHTML = "QR Code Scanner";
+        ueberschrift.innerHTML = "";
+        beschreibung.innerHTML = "";
+    console.log("setPage");
+    scanner.hidden = true;
+    if (p=="language") {
+        stage1.drawStage();
+    } else {
+        stage2.drawStage();
+    }   
+}
+
+
+
 function tick() {
     canvasElement.height = video.videoHeight;
     canvasElement.width = video.videoWidth;
@@ -394,7 +488,7 @@ qrcode.callback = res => {
         }
         //gewählten Farbemodus einsetzen
         if(farbModus == "normal") {
-        quelle = quelle + "/Nvirus.png";
+        quelle = quelle + "/normal.png";
 
         } else if (farbModus == "rot") {
         quelle = quelle + "/rot.png";
@@ -412,10 +506,10 @@ qrcode.callback = res => {
 
         bild.src = quelle;
 
-
-
     }
     };
+
+
 
 
 
