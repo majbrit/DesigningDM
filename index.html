@@ -4,7 +4,7 @@
 
 <head>
     <link rel="icon" type="image/png" href="">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Museumshilfe</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -55,9 +55,9 @@
 
         <!-- Modiauswahl -->
         <div class="modiauswahl" hidden="true">
-            <div class="nav">
+            <div class="nav" >
                 <a id="zurueck"><img src="./bilder/zurueck.png" class="icon"></a>
-                <h1 class="headline" id="moditext"> Wählen Sie einen Farbmodus: </h1>
+                <span class="headline" id="moditext" > Wählen Sie einen Farbmodus: </span>
             </div>
             <div class="modi">
                 <button class="button" id="normal" onClick="colormode('normal')"> Originalbild </button>
@@ -78,7 +78,7 @@
                     <img src="./bilder/einstellungen.png" onclick="chooseSetting()" class="dropbtn icon">
                     <div id="myDropdown" class="dropdown-content">
                       <a onClick="setPage('language')" id="lang">Sprachauswahl</a>
-                      <a onClick="setPage('modi')" id="mod">Modusauswahl</a>
+                      <a onClick="setPage('modi')" id="mod">Modusauswahl</span></a>
                     </div>
                 </div>
             </div>
