@@ -94,13 +94,9 @@ body{
   border-radius: 25px;
 }
 
-.content li{
-    height: 50px;
-    border-radius: 5px;
-}
 .options li{
-    height: 50px;
-    padding: 0 13px;
+
+    padding: 8px 13px;
     /*font-size: 21px;*/
     border-radius: 5px;
 }
