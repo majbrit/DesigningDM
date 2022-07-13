@@ -320,7 +320,7 @@ class Secondstage extends Stage {
         modiauswahl.hidden = false;
 
         var buttonzuqr = document.getElementById("zuqr");
-        var zurueckbutton = document.getElementById("zurueck");
+        var zurueck = document.getElementById("zurueck");
 
         var moditext = document.getElementById("moditext");
 
@@ -366,12 +366,12 @@ class Secondstage extends Stage {
                 break;
         }
         //Weiter-Button führt zur QR-Code-Scanner-Seite
-        buttonzuqr.onclick = function() {
+       buttonzuqr.onclick = function() {
             modiauswahl.hidden = true;
             stage3.drawStage()
         }
         //Zurück-Button führt zur Sprachauswahl-Seite
-        zurueckbutton.onclick = function() {
+        zurueck.onclick = function() {
             modiauswahl.hidden = true;
             stage1.drawStage()
         }
