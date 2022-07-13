@@ -21,7 +21,7 @@
                 <div class="container">
                     <div class="navbar " >
                         <h3><span class="text">Adjust font size</span></h3>
-                        <span><input type="range" min="0" max="60" value="20" id="slider" /> </span>
+                        <span><input type="range" min="8" max="60" value="18" id="slider" /> </span>
                     </div>
                 </div>
             </nav>
@@ -48,7 +48,7 @@
                 </ul>
             </div>
             </div>
-            <a><button class="block" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
+            <a><button class="block weiter" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
         </div>
 
 
@@ -66,7 +66,7 @@
                 <button class="button" id="voll" onClick="colormode('voll')"> völlige Farbenblindheit </button>
             </div>
         
-            <a><button id="zuqr" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
+            <a><button class="weiter" id="zuqr" type="button" ><img src="./bilder/weiter.png" class="icon"></button></a> 
         </div>
 
 
@@ -84,19 +84,18 @@
         
             <div id="abstand">
                 <div id="container">
-                <h1 id="qrheader">QR Code Scanner</h1>
-        
-                <a id="btn-scan-qr">
-                    <img id="qricon" src="./bilder/qricon.png">
-                <a/>
-        
-                <canvas hidden="" id="qr-canvas"></canvas>
-        
-                <div id="qr-result" hidden="">
-                    <b>Data:</b> <span id="outputData"></span>
+                    <h1 id="qrheader">QR Code Scanner</h1>
+            
+                    <a id="btn-scan-qr">
+                        <img id="qricon" src="./bilder/qricon.png">
+                    <a/>
+            
+                    <canvas hidden="" id="qr-canvas"></canvas>
+            
+                    <div id="qr-result" hidden="">
+                        <b>Data:</b> <span id="outputData"></span>
+                    </div>
                 </div>
-                </div>
-        
         
                 <h1 id="ueberschrift"></h1>    
                 <img src="" id="bild">

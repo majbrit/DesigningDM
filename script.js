@@ -61,13 +61,13 @@ options.forEach(option =>{
         console.log(selectedOption);
         console.log(option)
         switch (selectedOption) {
-            case "German":
+            case "Deutsch":
                 sprache = "de";
                 break;
-            case "Spanish":
+            case "Español":
                 sprache = "es";
                 break;
-            case "French":
+            case "Français":
                 sprache = "fr";
                 break;
             default:
