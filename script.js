@@ -217,7 +217,7 @@ qrcode.callback = res => {
                 break;
             case "es":
                 ueberschrift.innerHTML = "Tipo de Letra";
-                beschreibung.innerHTML = "En la medida de lo posible, el tipo de letra debe aparecer en color para todos..";
+                beschreibung.innerHTML = "En la medida de lo posible, el tipo de letra debe aparecer en color para todos.";
                 break;
             case "fr":
                 ueberschrift.innerHTML = "Police de caractères";
