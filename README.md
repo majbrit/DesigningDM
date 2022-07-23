@@ -1,4 +1,4 @@
-# DesigningDM
+# Design Digital Media for People with Special Needs
 # Museumshilfe für Farbenblinde
 Prototyp zum Scannen von QR-Codes zur Darstellung modifizierter Bilder für farbenblinde Personen
 
