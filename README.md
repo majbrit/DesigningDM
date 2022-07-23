@@ -6,7 +6,7 @@ https://github.com/majbrit/DesigningDM/
 
 ## Nutzung
 Öffnen der Webseite: Doppelklick auf index.html
-Die QR-Codes zum Einscannen befinden sich im Ordner Ausstellungsstuecke.
+Die QR-Codes zum Einscannen befinden sich im Ordner Ausstellungsstuecke (https://github.com/majbrit/DesigningDM/tree/main/Ausstellungsstuecke).
 
 ## Genutzter Code/ Quellen
 Das Scannen wurde mithilfe des Tutorials auf https://www.sitepoint.com/create-qr-code-reader-mobile-website/ verwirklicht. Der Code wurde abgeändert, sodass er zum Prototyp passt. Für das Scannen wurden außerdem die Libraries https://github.com/LazarSoft/jsqrcode und https://github.com/zxing/zxing verwendet.
