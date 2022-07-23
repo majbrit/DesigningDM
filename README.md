@@ -4,8 +4,9 @@ Prototyp zum Scannen von QR-Codes zur Darstellung modifizierter Bilder für farb
 
 https://github.com/majbrit/DesigningDM/
 
-## Öffnen
+## Nutzung
 Öffnen der Webseite: Doppelklick auf index.html
+Die QR-Codes zum Einscannen befinden sich im Ordner Ausstellungsstuecke.
 
 ## Genutzter Code/ Quellen
 Das Scannen wurde mithilfe des Tutorials auf https://www.sitepoint.com/create-qr-code-reader-mobile-website/ verwirklicht. Der Code wurde abgeändert, sodass er zum Prototyp passt. Für das Scannen wurden außerdem die Libraries https://github.com/LazarSoft/jsqrcode und https://github.com/zxing/zxing verwendet.
